@@ -2,8 +2,8 @@
 ********************************************
   ULTRASONIC DISTANCE MQTT SENSOR
 
-  Author: Björn Makowe <github@makowe.cc>
-  Date: 5th April 2018
+  Author: Björn Makowe <bjoern.makowe@online.de>
+  Date: 24th February 2018
 
   Version: 1.0
 ********************************************
@@ -50,6 +50,7 @@ void setup() {
   pinMode(pump_gardenIrrigation, OUTPUT);
   digitalWrite(pump_gardenIrrigation, HIGH);
 
+
   Serial.begin(115200);
 
   setup_wifi();
@@ -59,10 +60,10 @@ void setup() {
 }
 
 void loop() {
+
   if (!client.connected()) {
     reconnect();
   }
-  
   client.loop();
 
   long now = millis();
