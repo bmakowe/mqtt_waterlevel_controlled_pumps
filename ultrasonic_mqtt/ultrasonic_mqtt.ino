@@ -24,9 +24,6 @@ const char* wifi_ssid = "...";
 const char* wifi_password = "...";
 
 const char* broker_uri = "openhabianpi";
-const char* broker_username = "irrigation";
-const char* broker_password = "jpX,{D*&f_CLb_tspqwl";
-
 const char* topic_groundwaterPump = "/italy/lestans/garden/irrigation/pumps/groundWater";
 const char* topic_irrigationPump = "/italy/lestans/garden/irrigation/pumps/gardenIrrigation";
 const char* topic_waterLevel = "/italy/lestans/garden/irrigation/sensors/waterLevel";
