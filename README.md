@@ -64,6 +64,28 @@ Switch item = "groundwater_pump"
 
 
 ### .rules
+
 ```
-Rules
+rule "Pump control"
+when
+    Item waterLevel received update
+then
+    if (waterLevel.state >= 2.0) {
+      sendCommand(irrigation_pump, OFF)
+      sendCommand(groundwater_pump, ON)
+
+    } else if (waterLevel.state >= 1.0 && waterLevel.state < 2.0) {
+      sendCommand(irrigation_pump, ON)
+      sendCommand(groundwater_pump, ON)
+
+    } else if (waterLevel.state >= 0.0 && waterLevel.state < 1.0) {
+      sendCommand(irrigation_pump, ON)
+      sendCommand(groundwater_pump, OFF)
+    }
+end
+
 ```
+
+## ToDo
+
+* Sleep Wake
