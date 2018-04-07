@@ -6,7 +6,9 @@ Small private project for controlling garden irrigation with OH2 and MQTT.
 
 The water level is measured with maintenance-free ultrasonic sensors. Float switches are not recommended due to deposits and dirt in the service water. 
 In the following the level is published with MQTT under the topic "waterLevel".
+
 If OH2 was configured correctly, rules can now be applied to the items.
+
 In my case I have a large groundwater tank which serves as a storage for the garden irrigation system. Irrigation should run for as long as a minimum level is maintained. If this is too low, the groundwater pump should refill the tank in parallel. If the water level falls below the minimum level, the irrigation system is deactivated and the reservoir is filled up.
 
 The pumps can be controlled via topics "groundWater" and "gardenIrrigation". 
