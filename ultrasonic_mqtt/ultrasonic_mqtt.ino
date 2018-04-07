@@ -46,7 +46,7 @@ void setup() {
 
   pinMode(pump_groundWater, OUTPUT);
   digitalWrite(pump_groundWater, HIGH);
-  
+
   pinMode(pump_gardenIrrigation, OUTPUT);
   digitalWrite(pump_gardenIrrigation, HIGH);
 
@@ -70,7 +70,7 @@ void loop() {
 
   if (now - lastMsg > 5000) {
     lastMsg = now;
-    
+
     client.publish(topic_waterLevel, String(getDistance()).c_str());
   }
 }
@@ -111,8 +111,8 @@ double getDistance() {
 
   duration = pulseIn(ultrasonic_echo, HIGH);
 
-  distance = (duration / 2) / 29.1;
-  
+  distance = ((duration / 2) / 29.1) / 100;
+
   return distance;
 }
 
@@ -146,7 +146,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
       Serial.println("Pump garden irrigation off.");
       digitalWrite(pump_gardenIrrigation, HIGH);
     }
-  } 
+} 
 }
 
 void reconnect() {
@@ -157,7 +157,7 @@ void reconnect() {
 
     if (client.connect(clientId.c_str())) {
       Serial.println("connected");
-      
+
       client.subscribe(topic_groundwaterPump);
       client.subscribe(topic_irrigationPump);
 
@@ -170,5 +170,3 @@ void reconnect() {
     }
   }
 }
-
-
