@@ -2,7 +2,7 @@
 ********************************************
   Irrigation control system
 
-  Author: Björn Makowe <bjoern.makowe@online.de>
+  Author: Björn Makowe <bmakowe@users.noreply.github.com>
   Date: 24th February 2018
 
   Version: 1.0
